@@ -84,7 +84,7 @@ def generate_keywords(prompt: str) -> List[str]:
     #this regex removes bullet points numebrs
     # r'\s*(?:\d+\.|[A-Za-z]+\))\s*',
     # convert into  a list with regex taking off bullet points and white spaces
-    keywords_array = re.split(',|\n|;', keywords_text)
+    keywords_array = re.split(',|\n|;|-', keywords_text)
     #  loop thorught the  array and strip the white spaces
     keywords_array = [k.lower().strip() for k in keywords_array]
     # only create an array  with the length greater the o
