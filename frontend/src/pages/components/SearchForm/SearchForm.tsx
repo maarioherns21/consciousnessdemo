@@ -31,7 +31,7 @@ const SearchForm: FC<Props> = ({
       <input
       className="p-2 w-full rounded-md focus:outline-teal-400 focus:outline text-slate-700"
         type="text"
-        placeholder="Coffe"
+        placeholder="should i ask her out?"
         value={prompt}
         onChange={(e) => updatePromptValue(e.target.value)}
       ></input>

@@ -4,7 +4,7 @@ import argparse
 import re
 from typing import List
 
-MAX_INPUT_LENGTH = 42
+MAX_INPUT_LENGTH = 50
 
 
 def main():
