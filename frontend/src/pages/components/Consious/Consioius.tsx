@@ -1,3 +1,4 @@
+import { Player } from "@lottiefiles/react-lottie-player";
 import { FC, useEffect, useState } from "react";
 import Results from "../Results/Results";
 import SearchForm from "../SearchForm/SearchForm";
@@ -64,22 +65,33 @@ const ConciousAi: FC = () => {
       />
     );
   }
+  
 
   return (
     <>
-     <div className="h-screen flex">
-      <div className="max-w-xl m-auto p-2">
-        <div className="bg-slate-800 p-6 rounded-md text-white">
-          <div className="text-center my-6">
-            <h1 className=" text-3xl font-light">
-             ConsiousAI
-            </h1>
-            <div>Your ConsiousAI assistant</div>
-          </div>
-          {displayElement}
-        </div>
-      </div>
-    </div>
+  <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+	<div className="relative py-3 sm:max-w-xl sm:mx-auto">
+		<div
+			className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+		</div>
+		<div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+			<div className="max-w-md mx-auto">
+      <Player src='https://assets8.lottiefiles.com/packages/lf20_Uzc4GaHaBw.json' loop  autoplay style={{height:"100px", display: "flex" }}  />
+      <br/>
+				<div className="text-2xl font-semibold">
+					<h1>Consious AI</h1>
+				</div>
+				<div className="divide-y divide-gray-200">
+					<div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+						<div className="relative">
+						{displayElement}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
     </>
   );
 };

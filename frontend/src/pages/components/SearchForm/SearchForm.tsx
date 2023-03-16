@@ -28,10 +28,10 @@ const SearchForm: FC<Props> = ({
   return (
     <div className="mb-6 text-slate-400">
       <p className="pb-2">tell me what worries you and i will generate a response</p>
+
       <input
-      className="p-2 w-full rounded-md focus:outline-teal-400 focus:outline text-slate-700"
+      className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
         type="text"
-        placeholder="should i ask her out?"
         value={prompt}
         onChange={(e) => updatePromptValue(e.target.value)}
       ></input>
@@ -50,3 +50,4 @@ const SearchForm: FC<Props> = ({
 };
 
 export default SearchForm;
+
