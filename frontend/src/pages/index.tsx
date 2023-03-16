@@ -6,6 +6,8 @@ import styles from '@/styles/Home.module.css'
 import Lottie from "lottie-react"
 import { Player } from '@lottiefiles/react-lottie-player'
 import ConciousAi from './components/Consious/Consioius'
+import Footer from './components/Footer/Footer'
+import Nav from './Nav/Nav'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -18,7 +20,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
+        <Nav />
       <ConciousAi />
+      <Footer />
       </main>
     </>
   )
