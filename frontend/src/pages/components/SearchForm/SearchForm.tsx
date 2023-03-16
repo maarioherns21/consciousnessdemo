@@ -36,7 +36,7 @@ const SearchForm: FC<Props> = ({
         onChange={(e) => updatePromptValue(e.target.value)}
       ></input>
       <div className="p-2">
-        {prompt.length}/{characterLimit}
+        {prompt?.length}/{characterLimit}
       </div>
       <button
       className="bg-gradient-to-r from-teal-400 
