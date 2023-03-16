@@ -9,7 +9,7 @@ interface Props {
 
 const Results: FC<Props> = ({ question, keywords, onBack, prompt }) => {
     const keywordElements = [];
-    for (let i = 0; i < keywords.length; i++) {
+    for (let i = 0; i < keywords?.length; i++) {
       const element = (
         <div  key={i}  className="bg-teal-200 p-1 text-teal-700 px-2 text-sm rounded-lg shadow hover:shadow-xl">#{keywords[i]}
         </div>

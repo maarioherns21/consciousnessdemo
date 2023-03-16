@@ -18,7 +18,7 @@ const SearchForm: FC<Props> = ({
   isLoading,
 }) => {
   //   const characterLimit = 32;
-  const isPromptValid = prompt.length >= characterLimit;
+  const isPromptValid = prompt?.length >= characterLimit;
   const updatePromptValue = (text: string) => {
     if (text.length <= characterLimit) {
       setPrompt(text);
