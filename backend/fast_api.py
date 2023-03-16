@@ -1,8 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from practice import ai_snippets, generate_keywords
-
+from mangum import Mangum
 
 app = FastAPI()
+#this wraps the api end points from FAstAPi so we can add them into lambda funtion 
+handler = Mangum(app)
 MAX_INPUT_LENGTH = 42
 
 
