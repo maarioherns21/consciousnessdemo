@@ -1,21 +1,21 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
-import *  as lambda from "aws-cdk-lib/aws-lambda"
+import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as apiGateway from "aws-cdk-lib/aws-apigateway";
-import * as dotenv from "dotenv";
+import * as dotenv from "dotenv"
 
 dotenv.config()
+// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class InfrastructureStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    //this is layers from  the layer.zip file that we created with docker
+  //  this created the layer that we zip with docker
     const layer = new lambda.LayerVersion(this, "BaseLayer", {
       code: lambda.Code.fromAsset("lambda_base_layer/layer.zip"),
       compatibleRuntimes: [lambda.Runtime.PYTHON_3_9],
-    });
-
+    })
+//this import the api into lambda
     const apiLambda = new lambda.Function(this, "ApiFunction", {
       runtime: lambda.Runtime.PYTHON_3_9,
       code: lambda.Code.fromAsset("../backend/"),
@@ -25,11 +25,11 @@ export class InfrastructureStack extends cdk.Stack {
         OPENAI_API_KEY2: process.env.OPENAI_API_KEY2 ?? "",
       },
     })
-    //this allows to be able to  have the endpoint to be able to use on the fronend 
+
     const consciousApi = new apiGateway.RestApi(this, "RestApi", {
-      restApiName: "Conscious API",
+      restApiName: "Conscious_API",
     });
-   /// this is a api /proxy integretation 
+
     consciousApi.root.addProxy({
       defaultIntegration: new apiGateway.LambdaIntegration(apiLambda)
 
@@ -37,7 +37,7 @@ export class InfrastructureStack extends cdk.Stack {
     // The code that defines your stack goes here
 
     // example resource
-    // const queue = new sqs.Queue(this, 'InfrastructureQueue', {
+    // const queue = new sqs.Queue(this, 'InfraQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
   }
