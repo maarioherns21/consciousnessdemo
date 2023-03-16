@@ -1,9 +1,9 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import Results from "../Results/Results";
 import SearchForm from "../SearchForm/SearchForm";
-import { createContext } from "react";
-// https://0cunqbxr63.execute-api.us-west-1.amazonaws.com/prod/
+
+
 const ConciousAi: FC = () => {
   
   const [prompt, setPrompt] = useState("");
